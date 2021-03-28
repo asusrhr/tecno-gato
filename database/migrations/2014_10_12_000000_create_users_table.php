@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -24,9 +24,9 @@ class CreateUsersTable extends Migration
             $table->text('profile_photo_path')->nullable();
             $table->smallInteger('tema')->default(2);//1 niño 2 joven 3 adulto
             $table->smallInteger('turno')->default(1);//1 dia 2 noche
-            $table->unsignedBigInteger('id_persona');
+
             $table->timestamps();
-            $table->foreign('id_persona')->references('id')->on('personas');
+
 
         });
     }
