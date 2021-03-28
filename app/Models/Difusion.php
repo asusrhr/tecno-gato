@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Difusion extends Model
 {
     protected $table = 'difusiones';
-    protected $fillable = ['id','titulo','descripcion','fecha','id_persona'];
+    protected $fillable = ['id','titulo','descripcion','fecha','id_evento'];
 
-    public function persona()
+    public function eventos()
     {
         return $this->belongsTo('App\Persona', 'id_persona');
     }

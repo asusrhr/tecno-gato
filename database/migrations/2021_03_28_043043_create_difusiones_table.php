@@ -18,9 +18,9 @@ class CreateDifusionesTable extends Migration
             $table->string('titulo');
             $table->string('descripcion');
             $table->date('fecha');
-            $table->unsignedBigInteger('id_persona');
+            $table->unsignedBigInteger('id_evento');
             $table->timestamps();
-            $table->foreign('id_persona')->references('id')->on('personas');
+            $table->foreign('id_evento')->references('id')->on('eventos');
 
         });
     }

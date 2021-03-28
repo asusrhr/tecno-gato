@@ -15,6 +15,7 @@ class Persona extends Model
     {
         return $this->hasOne('App\User', 'id_persona');
     }
+
     public function cliente()
     {
         return $this->hasOne('App\Cliente', 'id_persona');
@@ -23,9 +24,13 @@ class Persona extends Model
     {
         return $this->hasOne('App\Administrador', 'id_persona');
     }
-    public function correo()
+    public function eventos()
     {
-        return $this->hasOne('App\Correo', 'id_persona');
+        return $this->hasMany('App\Evento', 'id_persona');
+    }
+    public function correos()
+    {
+        return $this->hasMany('App\Correo', 'id_persona');
     }
 
 }

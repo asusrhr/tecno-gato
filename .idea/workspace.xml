@@ -20,16 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bd4df9d-69ef-47b8-aaa8-081d5bca9b3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Administrador.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Cliente.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Correo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Difusion.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/DifusionCorreo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Evento.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Mensaje.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Persona.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Difusion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Difusion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/DifusionCorreo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DifusionCorreo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Evento.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Evento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Mensaje.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Mensaje.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Persona.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Persona.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_28_043043_create_difusiones_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_28_043043_create_difusiones_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +220,8 @@
       <workItem from="1616625906258" duration="3182000" />
       <workItem from="1616728095857" duration="217000" />
       <workItem from="1616884328306" duration="1664000" />
-      <workItem from="1616900124243" duration="10275000" />
+      <workItem from="1616900124243" duration="10602000" />
+      <workItem from="1616962765529" duration="4660000" />
     </task>
     <servers />
   </component>
@@ -240,6 +238,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
