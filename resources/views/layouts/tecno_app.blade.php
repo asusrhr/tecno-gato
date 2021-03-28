@@ -15,6 +15,7 @@
     <!-- Materialize-->
     <link href="{{asset('materialize/css/admin-materialize.min.css')}}" rel="stylesheet">
     <link href="{{asset('materialize/css/materialize.css')}}" rel="stylesheet">
+    <link href="{{asset('js/jquery-ui/jquery-ui.min.css')}}" rel="stylesheet">
     <!-- Material Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -50,6 +51,11 @@
             <div class="nav-wrapper"><a href="#!" class="brand-logo text_color titulo">Home</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
+                        <div class="col s6">
+                            <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
+                        </div>
+                    </li>
+                    <li class="hide-on-med-and-down">
                         <a href="#!" data-target="dropdown1" class="dropdown-trigger waves-effect text_color">
                             <i class="material-icons">notifications</i>
                         </a>
@@ -67,11 +73,17 @@
                 <a href="#name"><span class="white-text name titulo">John Doe</span></a>
                 <a href="#email"><span class="white-text email titulo">jdandturk@gmail.com</span></a>
             </div></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!" class="text_color titulo">Second Link</a></li>
+        <li><a class="subheader text_color titulo">Super Usuario</a></li>
+        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Usuarios</a></li>
         <li><div class="divider"></div></li>
-        <li><a class="subheader text_color titulo">Subheader</a></li>
-        <li><a class="waves-effect text_color titulo" href="#!">Third Link With Waves</a></li>
+        <li><a class="subheader text_color titulo">Administrativos</a></li>
+        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
+        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Correos</a></li>
+        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Administrar Mensajes</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader text_color titulo">Reportes y Estadísticas</a></li>
+        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
+        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
     </ul>
 </header>
 <main class="body_color">
@@ -91,6 +103,7 @@
     </div>
 </footer><!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="{{asset('js/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('materialize/js/materialize.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
 
@@ -116,6 +129,26 @@
 <script src="{{asset('materialize/js/admin.js')}}"></script>
 <script src="{{asset('materialize/js/page-scripts/dashboard.js')}}"></script>
 <script src="{{asset('materialize/js/init.js')}}"></script>
+<script>
+    $('#search').autocomplete({
+        source: function (request, response){
+            console.log(request.term);
+            $.ajax({
+                method: 'get',
+                url: "http://localhost:8000/api/busqueda",
+                dataType: 'json',
+                data: {
+                    dato: request.term,
+                },
+                success: function (data) {
+                    response(data)
+                }
+            })
+        },
+        minLength: 1,
+        select: ''
+    });
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.sidenav');

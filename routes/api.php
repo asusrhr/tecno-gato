@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('busqueda', function () {
+    $dato = \request()->get('dato');
+    $items = \App\Models\Busqueda::where('titulo', 'LIKE', '%'.$dato.'%')->get();
+    $labels = [];
+    foreach ($items as $item) {
+        array_push($labels, $item->titulo);
+    }
+    return $labels;
+});
