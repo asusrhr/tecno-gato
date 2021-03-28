@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\TemaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,9 +23,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
     Route::get('/home', function () {
+        \App\Models\Pagina::contarPagina(request()->path());
         return view('tecno.home');
     });
-    Route::get('/tema', function () {
-        return view('tecno.tema.show');
-    })->name('admin.tema.show');
+    Route::get('/tema', [TemaController::class, 'show'])->name('admin.tema.show');
+    Route::put('/tema', [TemaController::class, 'update'])->name('admin.tema.update');
+
 });
