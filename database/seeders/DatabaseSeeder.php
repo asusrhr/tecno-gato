@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $persona->direccion = '2do anillo av mutualista';
         $persona->fecha_nacimiento = '01/01/2021';
         $persona->telefono = '000000000';
+        $persona->tipo = 0;
         $persona->save();
 
         $administrador = new Administrador();
