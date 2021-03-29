@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Core\Utils\SupportFile;
 use App\Models\Evento;
+use App\Models\Mensaje;
 use App\Models\Pagina;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,8 @@ class EventoController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $evento = Evento::findOrFail($id);
+        $evento->load('difusiones');
+        $evento->load('mensajes');
         return view('', ['evento'=>$evento]);
     }
 
