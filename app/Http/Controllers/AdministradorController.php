@@ -38,16 +38,16 @@ class AdministradorController extends Controller
         $persona->tipo = 0;
         $persona->save();
 
-        $administrador = new Administrador();
-        $administrador->id_persona = $persona->id;
-        $administrador->save();
-
         $user = new User();
-        $user->name= $request['name'];
         $user->email= $request['email'];
         $user->password = bcrypt($request['password']);
         $user->id_persona = $persona->id;
         $user->save();
+
+        $administrador = new Administrador();
+        $administrador->id_persona = $persona->id;
+        $administrador->save();
+
 
         return redirect()->route('administrador.index');
 
@@ -57,7 +57,7 @@ class AdministradorController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $administrador = Administrador::findOrFail($id);
-        return view('', ['administrador'=>$administrador]);
+        return view('administrador.edit', ['administrador'=>$administrador]);
 
     }
 
