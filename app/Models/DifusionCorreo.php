@@ -14,10 +14,10 @@ class DifusionCorreo extends Model
 
     public function correo()
     {
-        return $this->belongsTo('App\Correo', 'id_correo');
+        return $this->belongsTo('App\Models\Correo', 'id_correo');
     }
     public function difusion()
     {
-        return $this->belongsTo('App\Difusion', 'id_difusion');
+        return $this->belongsTo('App\Models\Difusion', 'id_difusion');
     }
 }
