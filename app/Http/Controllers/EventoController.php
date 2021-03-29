@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Utils\SupportFile;
+use App\Utils\SupportFile;
 use App\Models\Evento;
 use App\Models\Mensaje;
 use App\Models\Pagina;
@@ -14,7 +14,7 @@ class EventoController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $eventos = Evento::all();
-        return view('', ['eventos'=>$eventos]);
+        return view('evento.index', ['eventos'=>$eventos]);
     }
 
     public function show($id)
@@ -29,13 +29,14 @@ class EventoController extends Controller
     public function create()
     {
         Pagina::contarPagina(\request()->path());
-        return view('');
+        return view('evento.create');
     }
 
     public function store(Request $request)
     {
         $evento = new Evento($request->all());
         $evento->foto = SupportFile::saveImage($request, 'foto', 'foto/evento/');
+        $evento->id_persona = auth()->user()->id_persona;
         $evento->save();
         return redirect()->route('evento.index');
     }
@@ -53,7 +54,6 @@ class EventoController extends Controller
         $evento->fecha_evento = $request->input('fecha_evento');
         $evento->ubicacion = $request->input('ubicacion');
         $evento->descripcion = $request->input('descripcion');
-        $evento->tipo = $request->input('tipo');
         $evento->titulo = $request->input('titulo');
         if($request->hasFile('foto')) {
             $evento->foto = SupportFile::saveImage($request, 'foto', 'foto/evento/');

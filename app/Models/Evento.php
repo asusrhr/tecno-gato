@@ -10,7 +10,7 @@ class Evento extends Model
 {
     use SoftDeletes;
     protected $table = 'eventos';
-    protected $fillable = ['id','titulo','descripcion','direccion','fecha_evento','foto','tipo','id_persona'];
+    protected $fillable = ['id','titulo','descripcion','direccion','fecha_evento','foto','id_persona'];
 
     public function persona()
     {

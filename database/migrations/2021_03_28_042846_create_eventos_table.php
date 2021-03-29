@@ -20,7 +20,6 @@ class CreateEventosTable extends Migration
             $table->string('direccion');
             $table->date('fecha_evento');
             $table->string('foto');
-            $table->char('tipo');
             $table->unsignedBigInteger('id_persona');
             $table->timestamps();
 

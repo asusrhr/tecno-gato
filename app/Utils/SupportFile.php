@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Core\Utils;
+namespace App\Utils;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
+//use Intervention\Image\Facades\Image;
 
 class SupportFile
 {

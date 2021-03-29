@@ -36,8 +36,8 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::put('/tema', [TemaController::class, 'update'])->name('admin.tema.update');
 
     Route::get('/evento', [EventoController::class, 'index'])->name('evento.index');
-    Route::get('/evento/{id}', [EventoController::class, 'show'])->name('evento.show');
     Route::get('/evento/create', [EventoController::class, 'create'])->name('evento.create');
+    Route::get('/evento/{id}', [EventoController::class, 'show'])->name('evento.show');
     Route::post('/evento', [EventoController::class, 'store'])->name('evento.store');
     Route::get('/evento/edit/{id}', [EventoController::class, 'edit'])->name('evento.edit');
     Route::put('/evento/{id}', [EventoController::class, 'update'])->name('evento.update');

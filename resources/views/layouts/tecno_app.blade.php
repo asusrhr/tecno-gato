@@ -152,10 +152,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, {});
+        var instances1 = M.Sidenav.init(elems, {});
 
         var elems2 = document.querySelectorAll('select');
-        var instances = M.FormSelect.init(elems2, {});
+        var instances2 = M.FormSelect.init(elems2, {});
+
+        var elems3 = document.querySelectorAll('.datepicker');
+        var instances3 = M.Datepicker.init(elems3, {
+            format: 'yyyy/mm/dd'
+        });
     });
 </script>
 </body>
