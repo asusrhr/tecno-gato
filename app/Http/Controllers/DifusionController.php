@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DifusionStoreRequest;
+use App\Http\Requests\DifusionUpdateRequest;
 use App\Models\Difusion;
 use App\Models\Evento;
 use App\Models\Pagina;
@@ -37,7 +39,7 @@ class DifusionController extends Controller
         return view('difusion.create', ['eventos' => $eventos]);
     }
 
-    public function store(Request $request)
+    public function store(DifusionStoreRequest $request)
     {
         $difusion = new Difusion($request->all());
         $difusion->save();
@@ -52,7 +54,7 @@ class DifusionController extends Controller
         return view('difusion.edit', ['difusion'=>$difusion, 'eventos'=>$eventos]);
     }
 
-    public function update($id, Request $request)
+    public function update($id, DifusionUpdateRequest $request)
     {
         $difusion = Difusion::findOrFail($id);
         $difusion->titulo = $request->input('titulo');

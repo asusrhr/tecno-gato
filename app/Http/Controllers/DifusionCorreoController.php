@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DifusionCorreoStoreRequest;
 use App\Models\Correo;
 use App\Models\Difusion;
 use App\Models\DifusionCorreo;
@@ -19,7 +20,7 @@ class DifusionCorreoController extends Controller
         return view('difusion.correo.create', ['correos'=>$correos, 'difusion'=>$difusion]);
     }
 
-    public function store($id_difusion, Request $request)
+    public function store($id_difusion, DifusionCorreoStoreRequest $request)
     {
         $dif = new DifusionCorreo($request->all());
         $dif->id_difusion = $id_difusion;

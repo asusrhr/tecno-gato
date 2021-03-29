@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdministradorStoreRequest;
+use App\Http\Requests\AdministradorUpdateRequest;
 use App\Models\Administrador;
 use App\Models\Pagina;
 use App\Models\Persona;
@@ -32,7 +34,7 @@ class AdministradorController extends Controller
         return view('administrador.create');
     }
 
-    public function store(Request $request)
+    public function store(AdministradorStoreRequest $request)
     {
         $persona = new Persona($request->all());
         $persona->tipo = 0;
@@ -61,7 +63,7 @@ class AdministradorController extends Controller
 
     }
 
-    public function update($id, Request $request)
+    public function update($id, AdministradorUpdateRequest $request)
     {
         $administrador = Administrador::findOrFail($id);
         $persona = Persona::findOrFail($administrador->id_persona);

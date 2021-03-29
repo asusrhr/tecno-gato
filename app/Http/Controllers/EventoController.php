@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventoStoreRequest;
+use App\Http\Requests\EventoUpdateRequest;
 use App\Utils\SupportFile;
 use App\Models\Evento;
 use App\Models\Mensaje;
@@ -32,7 +34,7 @@ class EventoController extends Controller
         return view('evento.create');
     }
 
-    public function store(Request $request)
+    public function store(EventoStoreRequest $request)
     {
         $evento = new Evento($request->all());
         $evento->foto = SupportFile::saveImage($request, 'foto', 'foto/evento/');
@@ -48,7 +50,7 @@ class EventoController extends Controller
         return view('evento.edit', ['evento'=>$evento]);
     }
 
-    public function update($id, Request $request)
+    public function update($id, EventoUpdateRequest $request)
     {
         $evento = Evento::findOrFail($id);
         $evento->fecha_evento = $request->input('fecha_evento');
