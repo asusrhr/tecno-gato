@@ -27,9 +27,14 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col s12 right-align">
+                                <a href="{{route('correo.index')}}" class="btn negative-primary-color" type="submit">cancelar</a>
+                                <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">Guardar
+                                </button>
+                            </div>
+                        </div>
 
-                        <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">Guardar
-                        </button>
                     </div>
                 </div>
                 </form>
