@@ -23,7 +23,7 @@ class EventoController extends Controller
         $evento = Evento::findOrFail($id);
         $evento->load('difusiones');
         $evento->load('mensajes');
-        return view('', ['evento'=>$evento]);
+        return view('evento.show', ['evento'=>$evento]);
     }
 
     public function create()
@@ -45,24 +45,24 @@ class EventoController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $evento = Evento::findOrFail($id);
-        return view('', ['evento'=>$evento]);
+        return view('evento.edit', ['evento'=>$evento]);
     }
 
     public function update($id, Request $request)
     {
         $evento = Evento::findOrFail($id);
         $evento->fecha_evento = $request->input('fecha_evento');
-        $evento->ubicacion = $request->input('ubicacion');
+        $evento->direccion = $request->input('direccion');
         $evento->descripcion = $request->input('descripcion');
         $evento->titulo = $request->input('titulo');
         if($request->hasFile('foto')) {
             $evento->foto = SupportFile::saveImage($request, 'foto', 'foto/evento/');
         }
-        $request->save();
+        $evento->save();
         return redirect()->route('evento.index');
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $evento = Evento::findOrFail($id);
         $evento->delete();

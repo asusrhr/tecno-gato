@@ -14,14 +14,14 @@ class Evento extends Model
 
     public function persona()
     {
-        return $this->belongsTo('App\Persona', 'id_persona');
+        return $this->belongsTo('App\Models\Persona', 'id_persona');
     }
     public function difusiones()
     {
-        return $this->hasMany('App\Difusion','id_evento');
+        return $this->hasMany('App\Models\Difusion','id_evento');
     }
     public function mensajes()
     {
-        return $this->hasMany('App\Mensajes','id_evento');
+        return $this->hasMany('App\Models\Mensajes','id_evento');
     }
 }
