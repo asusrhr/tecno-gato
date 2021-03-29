@@ -14,7 +14,7 @@ class DifusionController extends Controller
         Pagina::contarPagina(\request()->path());
         $difusiones = Difusion::all();
         $difusiones->load('evento');
-        return view('', ['difusiones'=>$difusiones]);
+        return view('difusion.index', ['difusiones'=>$difusiones]);
     }
 
     public function show($id)
@@ -30,7 +30,7 @@ class DifusionController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $eventos = Evento::all();
-        return view('', ['eventos' => $eventos]);
+        return view('difusion.create', ['eventos' => $eventos]);
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class DifusionController extends Controller
         Pagina::contarPagina(\request()->path());
         $eventos = Evento::all();
         $difusion = Difusion::findOrFail($id);
-        return view('', ['difusion'=>$difusion, 'eventos'=>$eventos]);
+        return view('difusion.edit', ['difusion'=>$difusion, 'eventos'=>$eventos]);
     }
 
     public function update($id, Request $request)

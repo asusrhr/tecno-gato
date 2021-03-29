@@ -22,6 +22,6 @@ class Evento extends Model
     }
     public function mensajes()
     {
-        return $this->hasMany('App\Models\Mensajes','id_evento');
+        return $this->hasMany('App\Models\Mensaje','id_evento');
     }
 }

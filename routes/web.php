@@ -52,16 +52,16 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::delete('/correo/{id}', [CorreoController::class, 'destroy'])->name('correo.destroy');
 
     Route::get('/difusion', [DifusionController::class, 'index'])->name('difusion.index');
-    Route::get('/difusion/{id}', [DifusionController::class, 'show'])->name('difusion.show');
     Route::get('/difusion/create', [DifusionController::class, 'create'])->name('difusion.create');
+    Route::get('/difusion/{id}', [DifusionController::class, 'show'])->name('difusion.show');
     Route::post('/difusion', [DifusionController::class, 'store'])->name('difusion.store');
     Route::get('/difusion/edit/{id}', [DifusionController::class, 'edit'])->name('difusion.edit');
     Route::put('/difusion/{id}', [DifusionController::class, 'update'])->name('difusion.update');
-    Route::delete('/difusion/{id}', [DifusionController::class, 'destroy'])->name('difusion.destroy');
+    Route::get('/difusion/delete/{id}', [DifusionController::class, 'destroy'])->name('difusion.destroy');
 
-    Route::get('/difusion/correo/create', [DifusionCorreoController::class, 'create'])->name('difusion.create');
-    Route::post('/difusion/{id_difusion}/correo', [DifusionCorreoController::class, 'store'])->name('difusion.store');
-    Route::delete('/difusion/{id_difusion}/correo/{id}', [DifusionCorreoController::class, 'destroy'])->name('difusion.destroy');
+    Route::get('/difusion/correo/create', [DifusionCorreoController::class, 'create'])->name('difusion.correo.create');
+    Route::post('/difusion/{id_difusion}/correo', [DifusionCorreoController::class, 'store'])->name('difusion.correo.store');
+    Route::delete('/difusion/{id_difusion}/correo/{id}', [DifusionCorreoController::class, 'destroy'])->name('difusion.correo.destroy');
 
     Route::get('/administrador', [AdministradorController::class, 'index'])->name('administrador.index');
     Route::get('/administrador/{id}', [AdministradorController::class, 'show'])->name('administrador.show');
