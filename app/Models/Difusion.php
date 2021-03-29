@@ -16,4 +16,9 @@ class Difusion extends Model
     {
         return $this->belongsTo('App\Models\Evento', 'id_evento');
     }
+
+    public function difusion_correos()
+    {
+        return $this->hasMany(DifusionCorreo::class, 'id_difusion');
+    }
 }

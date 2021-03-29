@@ -22,8 +22,12 @@ class DifusionController extends Controller
         Pagina::contarPagina(\request()->path());
         $difusion = Difusion::findOrFail($id);
         $difusion->load('evento');
-        $difusion->load('correos');
-        return view('', ['difusiones'=>$difusion]);
+        $difusion->load('difusion_correos');
+        foreach ($difusion->difusion_correos as $dc)
+        {
+            $dc->load('correo');
+        }
+        return view('difusion.show', ['difusion'=>$difusion]);
     }
 
     public function create()

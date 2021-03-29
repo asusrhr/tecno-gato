@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('evento.index');
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
@@ -59,9 +59,9 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::put('/difusion/{id}', [DifusionController::class, 'update'])->name('difusion.update');
     Route::get('/difusion/delete/{id}', [DifusionController::class, 'destroy'])->name('difusion.destroy');
 
-    Route::get('/difusion/correo/create', [DifusionCorreoController::class, 'create'])->name('difusion.correo.create');
+    Route::get('/difusion/{id_difusion}/correo/create', [DifusionCorreoController::class, 'create'])->name('difusion.correo.create');
     Route::post('/difusion/{id_difusion}/correo', [DifusionCorreoController::class, 'store'])->name('difusion.correo.store');
-    Route::delete('/difusion/{id_difusion}/correo/{id}', [DifusionCorreoController::class, 'destroy'])->name('difusion.correo.destroy');
+    Route::get('/difusion/{id_difusion}/correo/{id}/delete', [DifusionCorreoController::class, 'destroy'])->name('difusion.correo.destroy');
 
     Route::get('/administrador', [AdministradorController::class, 'index'])->name('administrador.index');
     Route::get('/administrador/{id}', [AdministradorController::class, 'show'])->name('administrador.show');

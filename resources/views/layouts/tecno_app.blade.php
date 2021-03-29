@@ -55,11 +55,6 @@
                             <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
                         </div>
                     </li>
-                    <li class="hide-on-med-and-down">
-                        <a href="#!" data-target="dropdown1" class="dropdown-trigger waves-effect text_color">
-                            <i class="material-icons">notifications</i>
-                        </a>
-                    </li>
                     <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
                 </ul><a href="#!" data-target="slide-out" class="sidenav-trigger left text_color"><i class="material-icons">menu</i></a>
             </div>
@@ -70,15 +65,16 @@
                 <div class="background" style="background-color: #512da8">
                 </div>
                 <a href="#user"><img class="circle" src="{{asset('images/pokemon-pikachu.jpg')}}"></a>
-                <a href="#name"><span class="white-text name titulo">John Doe</span></a>
-                <a href="#email"><span class="white-text email titulo">jdandturk@gmail.com</span></a>
+                <a href="#name"><span class="white-text name titulo">{{auth()->user()->persona->nombre . ' ' . auth()->user()->persona->apellido_paterno}}</span></a>
+                <a href="#email"><span class="white-text email titulo">{{auth()->user()->email}}</span></a>
             </div></li>
         <li><a class="subheader text_color titulo">Super Usuario</a></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Usuarios</a></li>
+        <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Usuarios</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader text_color titulo">Administrativos</a></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Correos</a></li>
+        <li><a href="{{route('evento.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
+        <li><a href="{{route('correo.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Correos</a></li>
+        <li><a href="{{route('difusion.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Difusiones</a></li>
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Administrar Mensajes</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader text_color titulo">Reportes y Estadísticas</a></li>
