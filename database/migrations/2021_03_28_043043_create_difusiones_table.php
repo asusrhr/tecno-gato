@@ -20,6 +20,8 @@ class CreateDifusionesTable extends Migration
             $table->date('fecha');
             $table->unsignedBigInteger('id_evento');
             $table->timestamps();
+
+            $table->softDeletes();
             $table->foreign('id_evento')->references('id')->on('eventos');
 
         });

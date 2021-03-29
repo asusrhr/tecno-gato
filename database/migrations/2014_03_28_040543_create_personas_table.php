@@ -24,6 +24,8 @@ class CreatePersonasTable extends Migration
             $table->string('telefono');
             $table->integer('tipo');// 0 admin/ 1 cliente
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

@@ -17,6 +17,8 @@ class CreateAdministradoresTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_persona');
             $table->timestamps();
+
+            $table->softDeletes();
             $table->foreign('id_persona')->references('id')->on('personas');
         });
     }

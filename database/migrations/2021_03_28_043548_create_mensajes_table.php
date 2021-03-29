@@ -21,6 +21,8 @@ class CreateMensajesTable extends Migration
             $table->boolean('leido');
             $table->unsignedBigInteger('id_evento');
             $table->timestamps();
+
+            $table->softDeletes();
             $table->foreign('id_evento')->references('id')->on('eventos');
 
         });

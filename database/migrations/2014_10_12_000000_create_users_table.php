@@ -24,9 +24,11 @@ class CreateUsersTable extends Migration
             $table->text('profile_photo_path')->nullable();
             $table->smallInteger('tema')->default(2);//1 niño 2 joven 3 adulto
             $table->smallInteger('turno')->default(1);//1 dia 2 noche
-
+            $table->unsignedBigInteger('id_persona');
             $table->timestamps();
 
+            $table->softDeletes();
+            $table->foreign('id_persona')->references('id')->on('personas');
 
         });
     }

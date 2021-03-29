@@ -20,6 +20,8 @@ class CreateCorreosTable extends Migration
 
             $table->unsignedBigInteger('id_persona');
             $table->timestamps();
+
+            $table->softDeletes();
             $table->foreign('id_persona')->references('id')->on('personas');
 
         });

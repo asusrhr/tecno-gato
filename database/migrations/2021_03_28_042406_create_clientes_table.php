@@ -18,6 +18,8 @@ class CreateClientesTable extends Migration
             $table->string('nit')->nullable();
             $table->unsignedBigInteger('id_persona');
             $table->timestamps();
+
+            $table->softDeletes();
             $table->foreign('id_persona')->references('id')->on('personas');
 
         });

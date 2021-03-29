@@ -18,6 +18,8 @@ class CreateDifusionesCorreosTable extends Migration
             $table->unsignedBigInteger('id_correo');
             $table->unsignedBigInteger('id_difusion');
             $table->timestamps();
+
+            $table->softDeletes();
             $table->foreign('id_correo')->references('id')->on('correos');
             $table->foreign('id_difusion')->references('id')->on('difusiones');
         });

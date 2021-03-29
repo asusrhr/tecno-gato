@@ -19,6 +19,8 @@ class CreateBusquedasTable extends Migration
             $table->string('descripcion')->nullable();
             $table->string('ruta');
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 
