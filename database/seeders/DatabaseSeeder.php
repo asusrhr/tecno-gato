@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $persona->apellido_materno = 'Admin';
         $persona->carnet_identidad = '000000000';
         $persona->direccion = '2do anillo av mutualista';
-        $persona->fecha_nacimiento = '01/01/2021';
+        $persona->fecha_nacimiento = '2021/01/01';
         $persona->telefono = '000000000';
         $persona->tipo = 0;
         $persona->save();
