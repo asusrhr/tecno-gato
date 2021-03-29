@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\TemaController;
 use \App\Http\Controllers\EventoController;
+use \App\Http\Controllers\CorreoController;
+use \App\Http\Controllers\DifusionController;
+use \App\Http\Controllers\DifusionCorreoController;
+use \App\Http\Controllers\AdministradorController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,31 +43,31 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::put('/evento/{id}', [EventoController::class, 'update'])->name('evento.update');
     Route::delete('/evento/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
 
-    Route::get('/correo', [EventoController::class, 'index'])->name('correo.index');
-    Route::get('/correo/{id}', [EventoController::class, 'show'])->name('correo.show');
-    Route::get('/correo/create', [EventoController::class, 'create'])->name('correo.create');
-    Route::post('/correo', [EventoController::class, 'store'])->name('correo.store');
-    Route::get('/correo/edit/{id}', [EventoController::class, 'edit'])->name('correo.edit');
-    Route::put('/correo/{id}', [EventoController::class, 'update'])->name('correo.update');
-    Route::delete('/correo/{id}', [EventoController::class, 'destroy'])->name('correo.destroy');
+    Route::get('/correo', [CorreoController::class, 'index'])->name('correo.index');
+    Route::get('/correo/{id}', [CorreoController::class, 'show'])->name('correo.show');
+    Route::get('/correo/create', [CorreoController::class, 'create'])->name('correo.create');
+    Route::post('/correo', [CorreoController::class, 'store'])->name('correo.store');
+    Route::get('/correo/edit/{id}', [CorreoController::class, 'edit'])->name('correo.edit');
+    Route::put('/correo/{id}', [CorreoController::class, 'update'])->name('correo.update');
+    Route::delete('/correo/{id}', [CorreoController::class, 'destroy'])->name('correo.destroy');
 
-    Route::get('/difusion', [EventoController::class, 'index'])->name('difusion.index');
-    Route::get('/difusion/{id}', [EventoController::class, 'show'])->name('difusion.show');
-    Route::get('/difusion/create', [EventoController::class, 'create'])->name('difusion.create');
-    Route::post('/difusion', [EventoController::class, 'store'])->name('difusion.store');
-    Route::get('/difusion/edit/{id}', [EventoController::class, 'edit'])->name('difusion.edit');
-    Route::put('/difusion/{id}', [EventoController::class, 'update'])->name('difusion.update');
-    Route::delete('/difusion/{id}', [EventoController::class, 'destroy'])->name('difusion.destroy');
+    Route::get('/difusion', [DifusionController::class, 'index'])->name('difusion.index');
+    Route::get('/difusion/{id}', [DifusionController::class, 'show'])->name('difusion.show');
+    Route::get('/difusion/create', [DifusionController::class, 'create'])->name('difusion.create');
+    Route::post('/difusion', [DifusionController::class, 'store'])->name('difusion.store');
+    Route::get('/difusion/edit/{id}', [DifusionController::class, 'edit'])->name('difusion.edit');
+    Route::put('/difusion/{id}', [DifusionController::class, 'update'])->name('difusion.update');
+    Route::delete('/difusion/{id}', [DifusionController::class, 'destroy'])->name('difusion.destroy');
 
-    Route::get('/difusion/correo/create', [EventoController::class, 'create'])->name('difusion.create');
-    Route::post('/difusion/{id_difusion}/correo', [EventoController::class, 'store'])->name('difusion.store');
-    Route::delete('/difusion/{id_difusion}/correo/{id}', [EventoController::class, 'destroy'])->name('difusion.destroy');
+    Route::get('/difusion/correo/create', [DifusionCorreoController::class, 'create'])->name('difusion.create');
+    Route::post('/difusion/{id_difusion}/correo', [DifusionCorreoController::class, 'store'])->name('difusion.store');
+    Route::delete('/difusion/{id_difusion}/correo/{id}', [DifusionCorreoController::class, 'destroy'])->name('difusion.destroy');
 
-    Route::get('/administrador', [EventoController::class, 'index'])->name('administrador.index');
-    Route::get('/administrador/{id}', [EventoController::class, 'show'])->name('administrador.show');
-    Route::get('/administrador/create', [EventoController::class, 'create'])->name('administrador.create');
-    Route::post('/administrador', [EventoController::class, 'store'])->name('administrador.store');
-    Route::get('/administrador/edit/{id}', [EventoController::class, 'edit'])->name('administrador.edit');
-    Route::put('/administrador/{id}', [EventoController::class, 'update'])->name('administrador.update');
-    Route::delete('/administrador/{id}', [EventoController::class, 'destroy'])->name('administrador.destroy');
+    Route::get('/administrador', [AdministradorController::class, 'index'])->name('administrador.index');
+    Route::get('/administrador/{id}', [AdministradorController::class, 'show'])->name('administrador.show');
+    Route::get('/administrador/create', [AdministradorController::class, 'create'])->name('administrador.create');
+    Route::post('/administrador', [AdministradorController::class, 'store'])->name('administrador.store');
+    Route::get('/administrador/edit/{id}', [AdministradorController::class, 'edit'])->name('administrador.edit');
+    Route::put('/administrador/{id}', [AdministradorController::class, 'update'])->name('administrador.update');
+    Route::delete('/administrador/{id}', [AdministradorController::class, 'destroy'])->name('administrador.destroy');
 });
