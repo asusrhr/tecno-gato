@@ -44,8 +44,8 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::delete('/evento/{id}', [EventoController::class, 'destroy'])->name('evento.destroy');
 
     Route::get('/correo', [CorreoController::class, 'index'])->name('correo.index');
-    Route::get('/correo/{id}', [CorreoController::class, 'show'])->name('correo.show');
     Route::get('/correo/create', [CorreoController::class, 'create'])->name('correo.create');
+    Route::get('/correo/{id}', [CorreoController::class, 'show'])->name('correo.show');
     Route::post('/correo', [CorreoController::class, 'store'])->name('correo.store');
     Route::get('/correo/edit/{id}', [CorreoController::class, 'edit'])->name('correo.edit');
     Route::put('/correo/{id}', [CorreoController::class, 'update'])->name('correo.update');

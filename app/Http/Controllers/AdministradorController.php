@@ -15,7 +15,7 @@ class AdministradorController extends Controller
         Pagina::contarPagina(\request()->path());
         $administradores = Administrador::all();
         $administradores->load('persona');
-        return view('', ['administradores'=>$administradores]);
+        return view('administrador.index', ['administradores'=>$administradores]);
     }
 
     public function show($id){
@@ -23,13 +23,13 @@ class AdministradorController extends Controller
         $administrador = Administrador::findOrFail($id);
         $administrador->load('persona');
         $administrador->persona->load('user');
-        return view('', ['administrador'=>$administrador]);
+        return view('administrador.show', ['administrador'=>$administrador]);
     }
 
     public function create()
     {
         Pagina::contarPagina(\request()->path());
-        return view('');
+        return view('administrador.create');
     }
 
     public function store(Request $request)

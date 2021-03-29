@@ -15,24 +15,24 @@ class Persona extends Model
 
     public function user()
     {
-        return $this->hasOne('App\User', 'id_persona');
+        return $this->hasOne('App\Models\User', 'id_persona');
     }
 
     public function cliente()
     {
-        return $this->hasOne('App\Cliente', 'id_persona');
+        return $this->hasOne('App\Models\Cliente', 'id_persona');
     }
     public function administrador()
     {
-        return $this->hasOne('App\Administrador', 'id_persona');
+        return $this->hasOne('App\Models\Administrador', 'id_persona');
     }
     public function eventos()
     {
-        return $this->hasMany('App\Evento', 'id_persona');
+        return $this->hasMany('App\Models\Evento', 'id_persona');
     }
     public function correos()
     {
-        return $this->hasMany('App\Correo', 'id_persona');
+        return $this->hasMany('App\Models\Correo', 'id_persona');
     }
 
 }

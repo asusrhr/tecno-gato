@@ -14,6 +14,6 @@ class Correo extends Model
 
     public function persona()
     {
-        return $this->belongsTo('App\Persona', 'id_persona');
+        return $this->belongsTo('App\Models\Persona', 'id_persona');
     }
 }

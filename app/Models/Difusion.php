@@ -14,6 +14,6 @@ class Difusion extends Model
 
     public function eventos()
     {
-        return $this->belongsTo('App\Persona', 'id_persona');
+        return $this->belongsTo('App\Models\Persona', 'id_persona');
     }
 }

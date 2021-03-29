@@ -13,25 +13,26 @@ class CorreoController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $correos = Correo::all();
-        return view('', ['correos'=>$correos]);
+        return view('correo.index', ['correos'=>$correos]);
     }
 
     public function show($id)
     {
         Pagina::contarPagina(\request()->path());
         $correo = Correo::findOrFail($id);
-        return view('', ['correo'=>$correo]);
+        return view('correo.show', ['correo'=>$correo]);
     }
 
     public function create()
     {
         Pagina::contarPagina(\request()->path());
-        return view('');
+        return view('correo.create');
     }
 
     public function store(Request $request)
     {
         $correo = new Correo($request->all());
+        $correo->id_persona = auth()->user()->id_persona;
         $correo->save();
         return redirect()->route('correo.index');
     }
