@@ -41,7 +41,7 @@ class CorreoController extends Controller
     {
         Pagina::contarPagina(\request()->path());
         $correo = Correo::findOrFail($id);
-        return view('', ['correo'=>$correo]);
+        return view('correo.edit', ['correo'=>$correo]);
     }
 
     public function update($id, Request $request)

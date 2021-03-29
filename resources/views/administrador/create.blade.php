@@ -7,55 +7,63 @@
                     @csrf
                     <div class="card-content">
                         <span class="card-title titulo text_color">Registrar un administrador</span>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input  id="nombre" name="nombre" type="text" class="validate">
+                                <label for="nombre">Nombre :</label>
+                            </div>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="titulo" type="text" class="validate" name="titulo" required value="{{old('titulo')}}">
-                                <label for="titulo">Título del evento</label>
-                                @error('titulo')
-                                <div style="color: red">{{$message}}</div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" required>{{old('descripcion')}}</textarea>
-                                <label for="descripcion">Descripción del evento</label>
-                                @error('descripcion')
-                                <div style="color: red">{{$message}}</div>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="input-field col s6">
-                                <input id="direccion" type="text" class="validate" name="direccion" required value="{{old('direccion')}}">
-                                <label for="direccion">Dirección del evento</label>
-                                @error('direccion')
-                                <div style="color: red">{{$message}}</div>
-                                @enderror
+                                <input id="apellido_paterno" name="apellido_paterno" type="text" class="validate">
+                                <label for="apellido_paterno">Apellido Paterno :</label>
                             </div>
+
                             <div class="input-field col s6">
-                                <label for="fecha_evento">Fecha del evento</label>
-                                <input id="fecha_evento" name="fecha_evento" type="text" class="datepicker" required value="{{old('fecha_evento')}}">
-                                @error('fecha_evento')
+                                <input id="apellido_materno" name="apellido_materno" type="text" class="validate">
+                                <label for="apellido_materno">Apellido Materno :</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input  id="carnet_identidad" name="carnet_identidad" type="text" class="validate">
+                                <label for="carnet_identidad">Carnet de Identidad :</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="direccion" name="direccion" type="text" class="validate">
+                                <label for="direccion">Direccion :</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="fecha_nacimiento" name="fecha_nacimiento" type="text" class="datepicker">
+                                <label for="fecha_nacimiento">Fecha de Nacimiento :</label>
+                            </div>
+
+                            <div class="input-field col s6">
+                                <input id="telefono" name="telefono" type="text" class="validate">
+                                <label for="telefono">Telefono :</label>
+                            </div>
+                            <div class="input-field col s12 ">
+                                <input id="email" name="email" type="email" class="validate" required value="{{old('email')}}">
+                                <label for="correo">Correo:</label>
+                                @error('email')
                                 <div style="color: red">{{$message}}</div>
                                 @enderror
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="file-field input-field">
-                                <div class="btn">
-                                    <span>Foto</span>
-                                    <input type="file" name="foto" required>
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text">
-                                    @error('foto')
-                                    <div style="color: red">{{$message}}</div>
-                                    @enderror
-                                </div>
+
+                            <div class="input-field col s12 ">
+                                <input id="password" name="password" type="password" class="validate" required value="{{old('password')}}" >
+                                <label for="password">Contraseña :</label>
+                                @error('password')
+                                <div style="color: red">{{$message}}</div>
+                                @enderror
+                            </div>
+
+                            <div class="input-field col s12 ">
+                                <input id="password_confirmate" name="password_confirmate" type="password" class="validate"  >
+                                <label for="password_confirmate">Confirmar Contraseña :</label>
                             </div>
                         </div>
+
 
                         <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">Guardar
                         </button>

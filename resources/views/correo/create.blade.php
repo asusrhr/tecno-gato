@@ -1,10 +1,11 @@
 @extends('layouts.tecno_app')
 @section('contenido')
     <div class="row">
-        <div class="col s12">
+        <div class="col s12 m10 offset-m1 l6 offset-l3">
             <div class="card card_color">
                 <form action="{{route('correo.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                <div class="card z-depth-4">
                     <div class="card-content">
                         <span class="card-title titulo text_color">Crear un correo</span>
 
@@ -30,7 +31,7 @@
                         <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">Guardar
                         </button>
                     </div>
-
+                </div>
                 </form>
             </div>
         </div>
