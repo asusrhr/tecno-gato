@@ -105,6 +105,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="{{asset('js/jquery-ui/jquery-ui.min.js')}}"></script>
 <script src="{{asset('materialize/js/materialize.js')}}"></script>
+<script rel="script" type="text/javascript" src="{{asset('materialize/js/page-scripts/table-custom-elements.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
 
 <!-- External libraries -->
@@ -121,6 +122,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script rel="script" type="text/javascript" src="{{asset('materialize/js/datatable.js')}}"></script>
 <script src="{{asset('materialize/js/imagesloaded.pkgd.min.js')}}"></script>
 <script src="{{asset('materialize/js/masonry.pkgd.min.js')}}"></script>
 

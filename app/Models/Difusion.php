@@ -12,8 +12,8 @@ class Difusion extends Model
     protected $table = 'difusiones';
     protected $fillable = ['id','titulo','descripcion','fecha','id_evento'];
 
-    public function eventos()
+    public function evento()
     {
-        return $this->belongsTo('App\Models\Persona', 'id_persona');
+        return $this->belongsTo('App\Models\Evento', 'id_evento');
     }
 }
