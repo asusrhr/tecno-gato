@@ -27,6 +27,7 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'password',
+        'rol',
         'id_persona'
     ];
 
@@ -63,4 +64,17 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Persona', 'id_persona');
     }
+
+    public function hasRoles(array $roles)
+    {
+        foreach($roles as $role)
+        {
+            if($this->rol===$role)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
