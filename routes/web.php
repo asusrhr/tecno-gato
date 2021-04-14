@@ -63,7 +63,7 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::post('/difusion/{id_difusion}/correo', [DifusionCorreoController::class, 'store'])->name('difusion.correo.store');
     Route::get('/difusion/{id_difusion}/correo/{id}/delete', [DifusionCorreoController::class, 'destroy'])->name('difusion.correo.destroy');
 
-    Route::get('/administrador', [AdministradorController::class, 'index'])->name('administrador.index');
+    Route::get('/administrador', [AdministradorController::class, 'index'])->name('administrador.index')->middleware(['auth','rol:Cliente']);
     Route::get('/administrador/create', [AdministradorController::class, 'create'])->name('administrador.create');
     Route::get('/administrador/{id}', [AdministradorController::class, 'show'])->name('administrador.show');
     Route::post('/administrador', [AdministradorController::class, 'store'])->name('administrador.store');
