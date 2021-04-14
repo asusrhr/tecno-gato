@@ -68,6 +68,9 @@
                 <a href="#name"><span class="white-text name titulo">{{auth()->user()->persona->nombre . ' ' . auth()->user()->persona->apellido_paterno}}</span></a>
                 <a href="#email"><span class="white-text email titulo">{{auth()->user()->email}}</span></a>
             </div></li>
+        @if (@auth()->user()->rol === 'Cliente')
+            
+        @else
         <li><a class="subheader text_color titulo">Super Usuario</a></li>
         <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Usuarios</a></li>
         <li><div class="divider"></div></li>
@@ -80,6 +83,7 @@
         <li><a class="subheader text_color titulo">Reportes y Estadísticas</a></li>
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
+        @endif
     </ul>
 </header>
 <main class="body_color">
