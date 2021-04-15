@@ -65,7 +65,7 @@
 
 
                 </div>
-            </div>
+
         </nav>
     </div>
     <ul id="slide-out" class="sidenav sidenav_color">
