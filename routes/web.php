@@ -7,6 +7,7 @@ use \App\Http\Controllers\CorreoController;
 use \App\Http\Controllers\DifusionController;
 use \App\Http\Controllers\DifusionCorreoController;
 use \App\Http\Controllers\AdministradorController;
+use \App\Http\Controllers\EstadisticasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,9 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::get('/difusion/edit/{id}', [DifusionController::class, 'edit'])->name('difusion.edit');
     Route::put('/difusion/{id}', [DifusionController::class, 'update'])->name('difusion.update');
     Route::get('/difusion/delete/{id}', [DifusionController::class, 'destroy'])->name('difusion.destroy');
+
+    Route::get('/estadisticas', [EstadisticasController::class, 'index'])->name('estadisticas.index');
+
 
     Route::get('/difusion/{id_difusion}/correo/create', [DifusionCorreoController::class, 'create'])->name('difusion.correo.create');
     Route::post('/difusion/{id_difusion}/correo', [DifusionCorreoController::class, 'store'])->name('difusion.correo.store');
