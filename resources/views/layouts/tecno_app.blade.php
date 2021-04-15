@@ -69,7 +69,7 @@
                 <a href="#email"><span class="white-text email titulo">{{auth()->user()->email}}</span></a>
             </div></li>
         @if (@auth()->user()->rol === 'Cliente')
-            
+            <li><a href="{{route('evento.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
         @else
         <li><a class="subheader text_color titulo">Super Usuario</a></li>
         <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Usuarios</a></li>
