@@ -56,7 +56,15 @@
                         </div>
                     </li>
                     <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
+                    <li><a href="{{ route('logout') }}"   class="waves-effect text_color" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="material-icons">close</i></a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </ul><a href="#!" data-target="slide-out" class="sidenav-trigger left text_color"><i class="material-icons">menu</i></a>
+
+
+                </div>
             </div>
         </nav>
     </div>
@@ -84,6 +92,8 @@
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
         @endif
+
+
     </ul>
 </header>
 <main class="body_color">

@@ -55,7 +55,6 @@ class DatabaseSeeder extends Seeder
         $cliente = new Cliente();
         $cliente->nit='343434334';
         $cliente->id_persona = $persona->id;
-
         $cliente->save();
 
         $user = new User();
