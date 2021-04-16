@@ -12,7 +12,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="titulo" type="text" class="validate" name="titulo" required value="{{$difusion->titulo}}">
+                                <input id="titulo" type="text" class="validate" name="titulo" oninvalid="setCustomValidity('Ingresa un titulo valido')" oninput="setCustomValidity('')" required value="{{$difusion->titulo}}">
                                 <label for="titulo">Título del evento</label>
                                 @error('titulo')
                                 <div style="color: red">{{$message}}</div>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" required>{{$difusion->descripcion}}</textarea>
+                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" oninvalid="setCustomValidity('Ingresa una descripcion valida')" oninput="setCustomValidity('')" required>{{$difusion->descripcion}}</textarea>
                                 <label for="descripcion">Descripción del evento</label>
                                 @error('descripcion')
                                 <div style="color: red">{{$message}}</div>
@@ -31,7 +31,7 @@
                         <div class="row">
                             <div class="input-field col s12 m6">
                                 <label for="fecha">Fecha de la difusión</label>
-                                <input id="fecha" name="fecha" type="text" class="datepicker" required value="{{$difusion->fecha}}">
+                                <input id="fecha" name="fecha" type="text" class="datepicker" oninvalid="setCustomValidity('Ingresa una fecha valida')" oninput="setCustomValidity('')" required value="{{$difusion->fecha}}">
                                 @error('fecha')
                                 <div style="color: red">{{$message}}</div>
                                 @enderror

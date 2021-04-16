@@ -10,13 +10,13 @@
                         <span class="card-title center-align">Editar Correo</span>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nombre" type="text" class="validate" name="nombre" value="{{$correo->nombre}}">
+                                <input id="nombre" type="text" class="validate" name="nombre" oninvalid="setCustomValidity('Ingresa un titulo valido')" oninput="setCustomValidity('')" required value="{{$correo->nombre}}">
                                 <label for="nombre">Nombre:</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="correo" name="correo" type="email" class="validate" value="{{$correo->correo}}">
+                                <input id="correo" name="correo" type="email" class="validate" oninvalid="setCustomValidity('Ingresa un correo valido')" oninput="setCustomValidity('')" required value="{{$correo->correo}}">
                                 <label for="correo">Correo:</label>
                             </div>
                         </div>
