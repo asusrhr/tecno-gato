@@ -12,7 +12,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="titulo" type="text" class="validate" name="titulo" required value="{{$evento->titulo}}">
+                                <input id="titulo" type="text" class="validate" name="titulo" oninvalid="setCustomValidity('Ingresa un titulo valido')" oninput="setCustomValidity('')" required value="{{$evento->titulo}}">
                                 <label for="titulo">Título del evento</label>
                                 @error('titulo')
                                 <div style="color: red">{{$message}}</div>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" required>{{$evento->descripcion}}</textarea>
+                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" oninvalid="setCustomValidity('Ingresa una descripcion valida')" oninput="setCustomValidity('')" required>{{$evento->descripcion}}</textarea>
                                 <label for="descripcion">Descripción del evento</label>
                                 @error('descripcion')
                                 <div style="color: red">{{$message}}</div>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="direccion" type="text" class="validate" name="direccion" required value="{{$evento->direccion}}">
+                                <input id="direccion" type="text" class="validate" name="direccion" oninvalid="setCustomValidity('Ingresa una direccion valida')" oninput="setCustomValidity('')" required value="{{$evento->direccion}}">
                                 <label for="direccion">Dirección del evento</label>
                                 @error('direccion')
                                 <div style="color: red">{{$message}}</div>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="input-field col s6">
                                 <label for="fecha_evento">Fecha del evento</label>
-                                <input id="fecha_evento" name="fecha_evento" type="text" class="datepicker" required value="{{$evento->fecha_evento}}">
+                                <input id="fecha_evento" name="fecha_evento" type="text" class="datepicker" oninvalid="setCustomValidity('Ingresa una fecha valida')" oninput="setCustomValidity('')" required value="{{$evento->fecha_evento}}">
                                 @error('fecha_evento')
                                 <div style="color: red">{{$message}}</div>
                                 @enderror

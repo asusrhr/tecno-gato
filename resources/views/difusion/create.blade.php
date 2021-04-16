@@ -11,7 +11,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="titulo" type="text" class="validate" name="titulo" required value="{{old('titulo')}}">
+                                <input id="titulo" type="text" class="validate" name="titulo" oninvalid="setCustomValidity('Ingresa un titulo valido')" oninput="setCustomValidity('')" required value="{{old('titulo')}}">
                                 <label for="titulo">Título del evento</label>
                                 @error('titulo')
                                 <div style="color: red">{{$message}}</div>
@@ -20,7 +20,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" required>{{old('descripcion')}}</textarea>
+                                <textarea id="descripcion" class="materialize-textarea" name="descripcion" oninvalid="setCustomValidity('Ingresa una descripcion valida')" oninput="setCustomValidity('')" required>{{old('descripcion')}}</textarea>
                                 <label for="descripcion">Descripción del evento</label>
                                 @error('descripcion')
                                 <div style="color: red">{{$message}}</div>
@@ -30,13 +30,13 @@
                         <div class="row">
                             <div class="input-field col s12 m6">
                                 <label for="fecha">Fecha de la difusión</label>
-                                <input id="fecha" name="fecha" type="text" class="datepicker" required value="{{old('fecha')}}">
+                                <input id="fecha" name="fecha" type="text" class="datepicker" oninvalid="setCustomValidity('Ingresa una fecha valida')" oninput="setCustomValidity('')" required value="{{old('fecha')}}">
                                 @error('fecha')
                                 <div style="color: red">{{$message}}</div>
                                 @enderror
                             </div>
                             <div class="input-field col s12 m6">
-                                <select name="id_evento" required>
+                                <select name="id_evento" oninvalid="setCustomValidity('Seleccione un evento')" oninput="setCustomValidity('')" required>
                                     <option value="" disabled selected>Escoja uno</option>
                                     @foreach($eventos as $evento)
                                         <option value="{{$evento->id}}">{{$evento->titulo}}</option>

@@ -11,7 +11,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="nombre" type="text" class="validate" name="nombre" required value="{{old('nombre')}}">
+                                <input id="nombre" type="text" class="validate" name="nombre" oninvalid="setCustomValidity('Ingresa un nombre valido')" oninput="setCustomValidity('')" required value="{{old('nombre')}}">
                                 <label for="nombre">Nombre:</label>
                                 @error('nombre')
                                 <div style="color: red">{{$message}}</div>
@@ -20,7 +20,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="correo" name="correo" type="email" class="validate" required value="{{old('correo')}}">
+                                <input id="correo" name="correo" type="email" class="validate" oninvalid="setCustomValidity('Ingresa un correo valido')" oninput="setCustomValidity('')" required value="{{old('correo')}}">
                                 <label for="correo">Correo:</label>
                                 @error('correo')
                                 <div style="color: red">{{$message}}</div>
