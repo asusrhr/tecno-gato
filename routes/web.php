@@ -7,6 +7,7 @@ use \App\Http\Controllers\CorreoController;
 use \App\Http\Controllers\DifusionController;
 use \App\Http\Controllers\DifusionCorreoController;
 use \App\Http\Controllers\AdministradorController;
+use \App\Http\Controllers\ClienteController;
 use \App\Http\Controllers\EstadisticasController;
 
 /*
@@ -74,4 +75,14 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::get('/administrador/edit/{id}', [AdministradorController::class, 'edit'])->name('administrador.edit');
     Route::put('/administrador/{id}', [AdministradorController::class, 'update'])->name('administrador.update');
     Route::delete('/administrador/{id}', [AdministradorController::class, 'destroy'])->name('administrador.destroy');
+
+    Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente.index');
+    Route::get('/cliente/create', [ClienteController::class, 'create'])->name('cliente.create');
+    Route::get('/cliente/{id}', [ClienteController::class, 'show'])->name('cliente.show');
+    Route::post('/cliente', [ClienteController::class, 'store'])->name('cliente.store');
+    Route::get('/cliente/edit/{id}', [ClienteController::class, 'edit'])->name('cliente.edit');
+    Route::put('/cliente/{id}', [ClienteController::class, 'update'])->name('cliente.update');
+    Route::delete('/cliente/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+
+    Route::get('/pdf', 'PdfController@download');
 });
