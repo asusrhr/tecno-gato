@@ -79,18 +79,22 @@
         @if (@auth()->user()->rol === 'Cliente')
             <li><a href="{{route('evento.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
         @else
+
         <li><a class="subheader text_color titulo">Super Usuario</a></li>
-        <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Usuarios</a></li>
+            <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Administrador</a></li>
+            <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Cliente</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader text_color titulo">Administrativos</a></li>
-        <li><a href="{{route('evento.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
-        <li><a href="{{route('correo.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Correos</a></li>
-        <li><a href="{{route('difusion.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Difusiones</a></li>
+            <li><a href="{{route('evento.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Eventos</a></li>
+            <li><a href="{{route('correo.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Correos</a></li>
+            <li><a href="{{route('difusion.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Difusiones</a></li>
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Administrar Mensajes</a></li>
         <li><div class="divider"></div></li>
-        <li><a class="subheader text_color titulo">Reportes y Estadísticas</a></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
+        <li><a class="subheader text_color titulo">Reportes</a></li>
+        <li><a href="{{route('reporte_evento')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
+        <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Usuarios</a></li>
+        <li><a class="subheader text_color titulo">Estadísticas</a></li>
+            <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
         @endif
 
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\TemaController;
+use \App\Http\Controllers\PdfController;
 use \App\Http\Controllers\EventoController;
 use \App\Http\Controllers\CorreoController;
 use \App\Http\Controllers\DifusionController;
@@ -84,5 +85,9 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::put('/cliente/{id}', [ClienteController::class, 'update'])->name('cliente.update');
     Route::delete('/cliente/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
 
-    Route::get('/pdf', 'PdfController@download');
+
 });
+
+//Repotes
+Route::get('pdf',[PdfController::class,'reporte_usuario'])->name('reporte_usuario');
+Route::get('reporte_evento',[PdfController::class,'reporte_evento'])->name('reporte_evento');

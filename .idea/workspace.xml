@@ -26,14 +26,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bd4df9d-69ef-47b8-aaa8-081d5bca9b3a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClienteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tecno-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tecno-app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/css/prueba.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/login1.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/evento-pdf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/usuario/evento-pdf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vista-pdf.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PdfController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PdfController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cliente/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cliente/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cliente/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cliente/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cliente/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cliente/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cliente/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cliente/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/tecno_app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/tecno_app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +204,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -208,12 +215,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\tecno-app\resources\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\tecno-app\app\Http\Requests" />
+      <recent name="C:\xampp\htdocs\tecno-app\resources\views" />
       <recent name="C:\xampp\htdocs\tecno-app\resources\views\usuario" />
-      <recent name="C:\xampp\htdocs\tecno-app\resources\views\mensajes" />
-      <recent name="C:\xampp\htdocs\tecno-app\resources\views\difusion" />
-      <recent name="C:\xampp\htdocs\tecno-app\resources\views\correo" />
+      <recent name="C:\xampp\htdocs\tecno-app\public\images" />
+      <recent name="C:\xampp\htdocs\tecno-app\public\css" />
+      <recent name="C:\xampp\htdocs\tecno-app\resources\views\auth" />
     </key>
   </component>
   <component name="RunManager">
@@ -243,6 +253,7 @@
       <workItem from="1617488942923" duration="486000" />
       <workItem from="1618281989274" duration="930000" />
       <workItem from="1618522405348" duration="806000" />
+      <workItem from="1618542038118" duration="9243000" />
     </task>
     <servers />
   </component>

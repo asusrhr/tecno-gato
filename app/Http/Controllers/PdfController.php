@@ -2,28 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Evento;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\App;
 
 class PdfController extends Controller
 {
-    public function download()
-    {
-        $pdf = app('dompdf.wrapper');
-        $pdf->loadHTML('<h1>Styde.net</h1>');
+    public function reporte_usuario(){
 
-        return $pdf->download('mi-archivo.pdf');
+        $usuarios = User::all();
+        $view=view('vista-pdf', compact('usuarios'))->render();
+        $pdf= App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('archivo'.'.pdf');
+
     }
+    public function reporte_difusiones(){
 
-        public function download1()
-    {
-        $data = [
-            'titulo' => 'Styde.net'
-        ];
+        $usuarios = User::all();
+        $view=view('vista-pdf', compact('usuarios'))->render();
+        $pdf= App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('archivo'.'.pdf');
 
-        $pdf = \PDF::loadView('vista-pdf', $data);
+    }
+    public function reporte_evento(){
 
-        return $pdf->download('archivo.pdf');
+        $eventos= Evento::all();
+        $view=view('evento-pdf', compact('eventos'))->render();
+        $pdf= App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('archivo'.'.pdf');
+
     }
 }
